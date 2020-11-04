@@ -30,8 +30,29 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MigraDoc.DocumentObjectModel, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc.1.50.5147\lib\net20\MigraDoc.DocumentObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.Rendering, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc.1.50.5147\lib\net20\MigraDoc.Rendering.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.RtfRendering, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc.1.50.5147\lib\net20\MigraDoc.RtfRendering.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc.1.50.5147\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc.1.50.5147\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,37 +63,58 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControlComboBoxSelected.cs">
+    <Compile Include="Components\ComponentBackUp.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\ComponentBackUp.Designer.cs">
+      <DependentUpon>ComponentBackUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ComponentDiagram.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\ComponentDiagram.Designer.cs">
+      <DependentUpon>ComponentDiagram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ComponentReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\ComponentReport.Designer.cs">
+      <DependentUpon>ComponentReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlComboBoxSelected.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ControlComboBoxSelected.Designer.cs">
+    <Compile Include="Controls\ControlComboBoxSelected.Designer.cs">
       <DependentUpon>ControlComboBoxSelected.cs</DependentUpon>
     </Compile>
-    <Compile Include="ControlListBoxGetting.cs">
+    <Compile Include="Controls\ControlListBoxGetting.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ControlListBoxGetting.Designer.cs">
+    <Compile Include="Controls\ControlListBoxGetting.Designer.cs">
       <DependentUpon>ControlListBoxGetting.cs</DependentUpon>
     </Compile>
-    <Compile Include="ControlTextBoxEntered.cs">
+    <Compile Include="Controls\ControlTextBoxEntered.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ControlTextBoxEntered.Designer.cs">
+    <Compile Include="Controls\ControlTextBoxEntered.Designer.cs">
       <DependentUpon>ControlTextBoxEntered.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ControlComboBoxSelected.resx">
+    <EmbeddedResource Include="Controls\ControlComboBoxSelected.resx">
       <DependentUpon>ControlComboBoxSelected.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ControlListBoxGetting.resx">
+    <EmbeddedResource Include="Controls\ControlListBoxGetting.resx">
       <DependentUpon>ControlListBoxGetting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ControlTextBoxEntered.resx">
+    <EmbeddedResource Include="Controls\ControlTextBoxEntered.resx">
       <DependentUpon>ControlTextBoxEntered.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
