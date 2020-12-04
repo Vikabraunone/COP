@@ -1,6 +1,0 @@
-D:\КОП\Лабы\Лаба 4 4.12\AbstractFactory\bin\Debug\AbstractFactory.dll
-D:\КОП\Лабы\Лаба 4 4.12\AbstractFactory\bin\Debug\AbstractFactory.pdb
-D:\КОП\Лабы\Лаба 4 4.12\AbstractFactory\obj\Debug\AbstractFactory.csproj.CoreCompileInputs.cache
-D:\КОП\Лабы\Лаба 4 4.12\AbstractFactory\obj\Debug\AbstractFactory.dll
-D:\КОП\Лабы\Лаба 4 4.12\AbstractFactory\obj\Debug\AbstractFactory.pdb
-D:\КОП\Лабы\Лаба 4 4.12\AbstractFactory\obj\Debug\AbstractFactory.csprojAssemblyReference.cache
