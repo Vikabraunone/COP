@@ -1,5 +1,9 @@
-﻿using System;
+﻿using BusinessLogic.Implements;
+using BusinessLogic.Interfaces;
+using System;
 using System.Windows.Forms;
+using Unity;
+using Unity.Lifetime;
 
 namespace View
 {
@@ -11,9 +15,17 @@ namespace View
         [STAThread]
         static void Main()
         {
+            var container = BuildUnityContainer();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMain());
+            Application.Run(container.Resolve<FormStudents>());
+        }
+
+        private static IUnityContainer BuildUnityContainer()
+        {
+            var currentContainer = new UnityContainer();
+            currentContainer.RegisterType<IStudentLogic, StudentLogic>(new HierarchicalLifetimeManager());
+            return currentContainer;
         }
     }
 }
