@@ -18,7 +18,7 @@ namespace View
             var container = BuildUnityContainer();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(container.Resolve<FormStudents>());
+            Application.Run(container.Resolve<FormMain>());
         }
 
         private static IUnityContainer BuildUnityContainer()
