@@ -25,7 +25,6 @@ namespace ClassLibraryControl.Components
         /// </summary>
         public string[] AxisSeriesX { set; get; }
 
-
         /// <summary>
         /// Подпись оси X
         /// </summary>

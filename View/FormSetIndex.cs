@@ -3,6 +3,9 @@ using System.Windows.Forms;
 
 namespace View
 {
+    /// <summary>
+    /// Вспомогательная форма для работы с FormControlListGetting и FormControlSelected. Установка индекса
+    /// </summary>
     public partial class FormSetIndex : Form
     {
         public int Id { get { return id; } }

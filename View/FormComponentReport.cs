@@ -4,13 +4,19 @@ using System.Windows.Forms;
 
 namespace View
 {
+    /// <summary>
+    /// Отчет Excel
+    /// </summary>
     public partial class FormComponentReport : Form
     {
         private List<string> columnNames = new List<string>();
 
-        public FormComponentReport()
+        private List<Student> students;
+
+        public FormComponentReport(List<Student> students)
         {
             InitializeComponent();
+            this.students = students;
         }
 
         private void buttonMergeColumn_Click(object sender, EventArgs e)
@@ -39,31 +45,11 @@ namespace View
 
         private void buttonCreateReport_Click(object sender, EventArgs e)
         {
-            var data = new List<Student> {
-                new Student
-                {
-                    FIO = "Иванов Иван Иваныч",
-                    Age = 18,
-                    Course = 1,
-                    DateBirth = new DateTime(2001, 5, 1)
-                },
-                new Student
-                {
-                    FIO = "Петров Алексей Федорович",
-                    Age = 19,
-                    Course = 2,
-                    DateBirth = new DateTime(2000, 8, 13)
-                },
-                new Student
-                {
-                    FIO = "Соколова Анастасия Валентиновна",
-                    Age = 21,
-                    Course = 4,
-                    DateBirth = new DateTime(1998, 4, 20)
-                }
-            };
             if (!string.IsNullOrEmpty(textBoxPath.Text))
-                componentReport.CreateReport(textBoxPath.Text, data, columnNames);
+            {
+                componentReport.CreateReport(textBoxPath.Text, students, columnNames);
+                MessageBox.Show("Отчёт создан", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

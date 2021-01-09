@@ -20,7 +20,7 @@ namespace ClassLibraryControl
         /// <summary>
         /// Регулярное выражение для проверки входящей шаблонной строки
         /// </summary>
-        private Regex TruePattern => new Regex(@"^([А-Яа-яA-Za-z\w\s]*:{[A-Za-z]+[\w]};)+$");
+        private Regex TruePattern => new Regex(@"^([А-Яа-яA-Za-z\w\s.,\-+]*:{[A-Za-z]+[\w]};)+$");
 
         /// <summary>
         /// Событие выбора элемента из списка

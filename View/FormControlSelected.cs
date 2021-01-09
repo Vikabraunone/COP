@@ -3,6 +3,9 @@ using System.Windows.Forms;
 
 namespace View
 {
+    /// <summary>
+    /// Компонент выбора
+    /// </summary>
     public partial class FormControlSelected : Form
     {
         public FormControlSelected()
@@ -40,6 +43,17 @@ namespace View
         private void controlComboBoxSelected_ComboBoxSelectedElementChange(object sender, EventArgs e)
         {
             MessageBox.Show(controlComboBoxSelected.SelectedText);
+        }
+
+        private void buttonChange_Click(object sender, EventArgs e)
+        {
+            var form = new FormSetText();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                controlComboBoxSelected.SelectedText = form.TextValue;
+                MessageBox.Show($"Изменился текст {controlComboBoxSelected.SelectedText}",
+                    "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

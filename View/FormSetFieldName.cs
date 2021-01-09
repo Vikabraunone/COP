@@ -5,6 +5,9 @@ using System.Windows.Forms;
 
 namespace View
 {
+    /// <summary>
+    /// Вспомогательная форма для работы с FormPattern
+    /// </summary>
     public partial class FormSetFieldName : Form
     {
         public string TextField

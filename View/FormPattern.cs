@@ -4,6 +4,9 @@ using System.Windows.Forms;
 
 namespace View
 {
+    /// <summary>
+    /// Вспомогательный класс для работы с FormControlListGetting
+    /// </summary>
     public partial class FormPattern : Form
     {
         private readonly Type typeObject;

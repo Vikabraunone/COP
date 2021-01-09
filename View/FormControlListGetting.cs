@@ -1,17 +1,24 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 
 namespace View
 {
+    /// <summary>
+    /// Компонент вывода списка
+    /// </summary>
     public partial class FormControlListGetting : Form
     {
         private Type typeObject = typeof(Student);
 
-        public FormControlListGetting()
+        private List<Student> students;
+
+        public FormControlListGetting(List<Student> students)
         {
             InitializeComponent();
+            this.students = students;
         }
 
         private void buttonSetPattern_Click(object sender, EventArgs e)
@@ -23,14 +30,14 @@ namespace View
                 var pattern = string.Join(string.Empty, dictionary.Select(x => x.Key + ":{" + x.Value + "};"));
                 controlListBoxGetting.SetPattern(pattern);
                 MessageBox.Show("Шаблон задан");
+                LoadListBox();
             }
         }
 
-        private void buttonAdd_Click(object sender, EventArgs e)
+        private void LoadListBox()
         {
-            var form = new FormAddStudent();
-            if (form.ShowDialog() == DialogResult.OK)
-                controlListBoxGetting.AddObject(CreateObjectString(typeObject.GetFields(), form.Student));
+            foreach (var student in students)
+                controlListBoxGetting.AddObject(CreateObjectString(typeObject.GetFields(), student));
         }
 
         private string CreateObjectString(FieldInfo[] fields, object obj)
@@ -65,6 +72,11 @@ namespace View
         }
 
         private void controlListBoxGetting_ListBoxSelectedElementChange(object sender, EventArgs e)
+        {
+            MessageBox.Show(controlListBoxGetting.SelectedText, "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void buttonGetText_Click(object sender, EventArgs e)
         {
             MessageBox.Show(controlListBoxGetting.SelectedText, "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

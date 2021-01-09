@@ -80,6 +80,11 @@ namespace ClassLibraryControl.Components
                 Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
         }
 
+        /// <summary>
+        /// Объединить колонки
+        /// </summary>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
         public void MergeColumn(int start, int end)
         {
             var excel_cells = _worksheet.get_Range(_letters[start - 1] + 1, _letters[end - 1] + 1);

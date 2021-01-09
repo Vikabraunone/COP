@@ -5,6 +5,7 @@ namespace View
 {
     public partial class FormControlEntered : Form
     {
+        // Компонент ввода
         public FormControlEntered()
         {
             InitializeComponent();

@@ -36,7 +36,7 @@
             this.listBox.FormattingEnabled = true;
             this.listBox.Location = new System.Drawing.Point(9, 10);
             this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(380, 264);
+            this.listBox.Size = new System.Drawing.Size(595, 264);
             this.listBox.TabIndex = 0;
             // 
             // ControlListBoxGetting
@@ -45,7 +45,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.listBox);
             this.Name = "ControlListBoxGetting";
-            this.Size = new System.Drawing.Size(400, 282);
+            this.Size = new System.Drawing.Size(614, 282);
             this.ResumeLayout(false);
 
         }

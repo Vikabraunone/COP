@@ -1,6 +1,6 @@
 ﻿namespace View
 {
-    partial class FormMain
+    partial class FormComponents
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,6 @@
             this.buttonComponentReport = new System.Windows.Forms.Button();
             this.buttonComponentDiagram = new System.Windows.Forms.Button();
             this.componentBackUp = new ClassLibraryControl.Components.ComponentBackUp(this.components);
-            this.componentDiagram = new ClassLibraryControl.Components.ComponentDiagram(this.components);
             this.SuspendLayout();
             // 
             // buttonControlListGetting
@@ -99,17 +98,11 @@
             this.buttonComponentDiagram.UseVisualStyleBackColor = true;
             this.buttonComponentDiagram.Click += new System.EventHandler(this.buttonComponentDiagram_Click);
             // 
-            // componentDiagram
-            // 
-            this.componentDiagram.AxisNameX = null;
-            this.componentDiagram.AxisNameY = null;
-            this.componentDiagram.AxisSeriesX = null;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 223);
+            this.ClientSize = new System.Drawing.Size(438, 223);
             this.Controls.Add(this.buttonComponentDiagram);
             this.Controls.Add(this.buttonComponentReport);
             this.Controls.Add(this.buttonComponentBackUp);
@@ -132,6 +125,5 @@
         private System.Windows.Forms.Button buttonComponentReport;
         private System.Windows.Forms.Button buttonComponentDiagram;
         private ClassLibraryControl.Components.ComponentBackUp componentBackUp;
-        private ClassLibraryControl.Components.ComponentDiagram componentDiagram;
     }
 }
