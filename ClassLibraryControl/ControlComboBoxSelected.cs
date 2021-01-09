@@ -4,6 +4,9 @@ using System.Windows.Forms;
 
 namespace ClassLibraryControl
 {
+    /// <summary>
+    /// Компонент выбора
+    /// </summary>
     public partial class ControlComboBoxSelected : UserControl
     {
         /// <summary>
@@ -49,6 +52,7 @@ namespace ClassLibraryControl
         public string SelectedText
         {
             get { return comboBox.Text; }
+            set { comboBox.Text = value; }
         }
 
         /// <summary>

@@ -10,6 +10,6 @@ namespace View
 
         public int Course;
 
-        public DateTime? DateBirth;
+        public DateTime DateBirth;
     }
 }

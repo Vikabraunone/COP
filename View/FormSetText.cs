@@ -4,24 +4,22 @@ using System.Windows.Forms;
 namespace View
 {
     /// <summary>
-    /// Вспомогательная форма для работы с FormControlListGetting и FormControlSelected. Установка индекса
+    /// Вспомогательная форма для FormControlSelected
     /// </summary>
-    public partial class FormSetIndex : Form
+    public partial class FormSetText : Form
     {
-        public int Id { get { return id; } }
+        public string TextValue => textBox.Text;
 
-        private int id;
-
-        public FormSetIndex()
+        public FormSetText()
         {
             InitializeComponent();
         }
 
         private void buttonOk_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(textBox.Text, out id))
+            if (string.IsNullOrEmpty(textBox.Text))
             {
-                MessageBox.Show("Число должно быть целым", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Введите текст");
                 return;
             }
             DialogResult = DialogResult.OK;
